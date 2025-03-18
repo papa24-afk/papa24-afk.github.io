@@ -3,23 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buy Data Bundle</title>
+    <title>Buy MTN Data</title>
     <style>
         body { font-family: Arial, sans-serif; text-align: center; }
-        form { margin: auto; width: 50%; padding: 20px; border: 1px solid black; }
-        input, button { margin: 10px; padding: 10px; width: 80%; }
+        .container { width: 80%; margin: auto; }
+        .product-image { width: 100%; max-width: 300px; }
+        .price { font-size: 18px; color: #333; }
+        .dropdown, .button { padding: 10px; width: 80%; margin-top: 10px; }
+        .button { background: pink; border: none; cursor: pointer; font-size: 16px; }
+        .whatsapp { position: fixed; bottom: 20px; right: 20px; }
     </style>
 </head>
 <body>
-    <h2>Buy Data Bundle</h2>
-    <p>Send GHS 8 to **054XXXXXXX** and use the order ID as a reference.</p>
-    <form action="https://formsubmit.co/YOUR-EMAIL-HERE" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="tel" name="phone" placeholder="Your Phone Number" required>
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-        <button type="submit">Place Order</button>
-    </form>
+    <div class="container">
+        <img src="mtn-logo.png" alt="MTN Logo" class="product-image">
+        <h2>MTN Data Bundles</h2>
+        <p class="price">GHS 4.90 - GHS 399.00 + Free Shipping</p>
+        
+        <label for="package">Choose a Package:</label>
+        <select id="package" class="dropdown">
+            <option>1GB</option>
+            <option>2GB</option>
+            <option>3GB</option>
+            <option>4GB</option>
+        </select>
+        
+        <button class="button">Add to Cart</button>
+    </div>
+
+    <a href="https://wa.me/23354XXXXXXX" class="whatsapp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="50" alt="WhatsApp">
+    </a>
 </body>
 </html>
-
