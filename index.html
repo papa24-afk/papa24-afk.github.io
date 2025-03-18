@@ -15,28 +15,6 @@
         .hidden { display: none; }
         .whatsapp-link { display: inline-block; margin-top: 15px; font-size: 16px; color: white; background: #25D366; padding: 10px 15px; border-radius: 5px; text-decoration: none; }
     </style>
-    <script>
-        function showPaymentDetails() {
-            var name = document.getElementById("name").value;
-            var phone = document.getElementById("phone").value;
-            var now = new Date();
-            var orderTime = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
-
-            if (name === "" || phone === "") {
-                alert("Please enter your name and phone number.");
-                return;
-            }
-
-            document.getElementById("order-form").classList.add("hidden");
-            document.getElementById("payment-details").classList.remove("hidden");
-            document.getElementById("order-ref").innerHTML = orderTime;
-            
-            // Set WhatsApp link with order details
-            var message = "Hello, I just placed an order for MTN Just 4 U. My phone number is: " + phone + " and my order reference is: " + orderTime;
-            var whatsappLink = "https://wa.me/233549174866?text=" + encodeURIComponent(message);
-            document.getElementById("whatsapp-link").href = whatsappLink;
-        }
-    </script>
 </head>
 <body>
 
@@ -46,22 +24,27 @@
         <p class="price">GHS 7 for 4.5GB (7 Days)</p>
         <p class="info">⚠️ You need to top up GHS 5 airtime before purchase.</p>
 
-        <div id="order-form">
-            <input type="text" id="name" class="input" placeholder="Your Name" required>
-            <input type="tel" id="phone" class="input" placeholder="Your Phone Number" required>
-            <button class="button" onclick="showPaymentDetails()">Place Order</button>
-        </div>
+        <!-- Order Form (Sends Email) -->
+        <form action="https://formsubmit.co/papakda989@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New MTN Just 4 U Order">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="Customer Name" class="input" placeholder="Your Name" required>
+            <input type="tel" name="Customer Phone Number" class="input" placeholder="Your Phone Number" required>
+            <input type="hidden" name="Order Details" value="MTN Just 4 U - GHS 7 for 4.5GB (7 Days)">
+            <input type="hidden" name="Payment Instructions" value="Send GHS 7 to MoMo (0549174866) - Reference: Order Time">
+            <button type="submit" class="button">Place Order</button>
+        </form>
 
         <div id="payment-details" class="hidden">
             <h3>Payment Details</h3>
             <p>Send <b>GHS 7</b> to:</p>
             <p><b>Papa Kwabena Doku Amponsah</b></p>
             <p><b>MoMo Number: 0549174866</b></p>
-            <p>Use this as your reference: <b id="order-ref"></b></p>
-            <p>After payment, click below to contact me on WhatsApp.</p>
-            
+            <p>Use the time of order as your reference.</p>
+            <p>After payment, contact me on WhatsApp.</p>
+
             <!-- WhatsApp Contact Button -->
-            <a id="whatsapp-link" class="whatsapp-link" target="_blank">Contact me on WhatsApp</a>
+            <a href="https://wa.me/233549174866?text=Hello,%20I%20just%20placed%20an%20order%20for%20MTN%20Just%204%20U." class="whatsapp-link" target="_blank">Contact me on WhatsApp</a>
         </div>
     </div>
 
