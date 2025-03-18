@@ -15,6 +15,13 @@
         .hidden { display: none; }
         .whatsapp-link { display: inline-block; margin-top: 15px; font-size: 16px; color: white; background: #25D366; padding: 10px 15px; border-radius: 5px; text-decoration: none; }
     </style>
+    <script>
+        function showPaymentDetails() {
+            // Hide the form and show the payment details
+            document.getElementById('payment-details').classList.remove('hidden');
+            document.getElementById('order-form').classList.add('hidden');
+        }
+    </script>
 </head>
 <body>
 
@@ -24,20 +31,16 @@
         <p class="price">GHS 7 for 4.5GB (7 Days)</p>
         <p class="info">⚠️ You need to top up GHS 5 airtime before purchase.</p>
 
-        <!-- Order Form (Sends Email) -->
-        <form action="https://formsubmit.co/papakda989@gmail.com" method="POST">
-            <input type="hidden" name="_subject" value="New MTN Just 4 U Order">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="tel" name="Customer Phone Number" class="input" placeholder="Your Phone Number" required>
-            <input type="hidden" name="Order Details" value="MTN Just 4 U - GHS 7 for 4.5GB (7 Days)">
-            <input type="hidden" name="Payment Instructions" value="Send GHS 7 to MoMo (0549174866) - Reference: Order Time">
-            <button type="submit" class="button">Place Order</button>
-        </form>
+        <!-- Order Form -->
+        <div id="order-form">
+            <input type="tel" class="input" placeholder="Your Phone Number" required>
+            <button type="button" class="button" onclick="showPaymentDetails()">Place Order</button>
+        </div>
 
         <div id="payment-details" class="hidden">
             <h3>Payment Details</h3>
             <p>Send <b>GHS 7</b> to:</p>
-            <p><b>Papa Kwabena Doku Amponsah</b></p>
+            <p><b>Seller</b></p>
             <p><b>MoMo Number: 0549174866</b></p>
             <p>Use the time of order as your reference.</p>
             <p>After payment, contact me on WhatsApp.</p>
