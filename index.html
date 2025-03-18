@@ -3,36 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buy MTN Data</title>
+    <title>MTN Just 4 U</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; }
-        .container { width: 80%; margin: auto; }
-        .product-image { width: 100%; max-width: 300px; }
-        .price { font-size: 18px; color: #333; }
-        .dropdown, .button { padding: 10px; width: 80%; margin-top: 10px; }
-        .button { background: pink; border: none; cursor: pointer; font-size: 16px; }
-        .whatsapp { position: fixed; bottom: 20px; right: 20px; }
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        .container { width: 90%; max-width: 400px; margin: auto; }
+        .product-image { width: 100%; max-width: 250px; }
+        .price { font-size: 18px; color: #333; font-weight: bold; }
+        .info { font-size: 14px; color: #555; }
+        .input, .button { padding: 10px; width: 90%; margin-top: 10px; }
+        .button { background: #ffcc00; border: none; cursor: pointer; font-size: 16px; }
+        .hidden { display: none; }
+        .whatsapp-link { display: inline-block; margin-top: 15px; font-size: 16px; color: white; background: #25D366; padding: 10px 15px; border-radius: 5px; text-decoration: none; }
     </style>
+    <script>
+        function showPaymentDetails() {
+            var name = document.getElementById("name").value;
+            var phone = document.getElementById("phone").value;
+            var now = new Date();
+            var orderTime = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+
+            if (name === "" || phone === "") {
+                alert("Please enter your name and phone number.");
+                return;
+            }
+
+            document.getElementById("order-form").classList.add("hidden");
+            document.getElementById("payment-details").classList.remove("hidden");
+            document.getElementById("order-ref").innerHTML = orderTime;
+            
+            // Set WhatsApp link with order details
+            var message = "Hello, I just placed an order for MTN Just 4 U. My phone number is: " + phone + " and my order reference is: " + orderTime;
+            var whatsappLink = "https://wa.me/233549174866?text=" + encodeURIComponent(message);
+            document.getElementById("whatsapp-link").href = whatsappLink;
+        }
+    </script>
 </head>
 <body>
+
     <div class="container">
         <img src="mtn-logo.png" alt="MTN Logo" class="product-image">
-        <h2>MTN Data Bundles</h2>
-        <p class="price">GHS 4.90 - GHS 399.00 + Free Shipping</p>
-        
-        <label for="package">Choose a Package:</label>
-        <select id="package" class="dropdown">
-            <option>1GB</option>
-            <option>2GB</option>
-            <option>3GB</option>
-            <option>4GB</option>
-        </select>
-        
-        <button class="button">Add to Cart</button>
+        <h2>MTN Just 4 U</h2>
+        <p class="price">GHS 7 for 4.5GB (7 Days)</p>
+        <p class="info">⚠️ You need to top up GHS 5 airtime before purchase.</p>
+
+        <div id="order-form">
+            <input type="text" id="name" class="input" placeholder="Your Name" required>
+            <input type="tel" id="phone" class="input" placeholder="Your Phone Number" required>
+            <button class="button" onclick="showPaymentDetails()">Place Order</button>
+        </div>
+
+        <div id="payment-details" class="hidden">
+            <h3>Payment Details</h3>
+            <p>Send <b>GHS 7</b> to:</p>
+            <p><b>Papa Kwabena Doku Amponsah</b></p>
+            <p><b>MoMo Number: 0549174866</b></p>
+            <p>Use this as your reference: <b id="order-ref"></b></p>
+            <p>After payment, click below to contact me on WhatsApp.</p>
+            
+            <!-- WhatsApp Contact Button -->
+            <a id="whatsapp-link" class="whatsapp-link" target="_blank">Contact me on WhatsApp</a>
+        </div>
     </div>
 
-    <a href="https://wa.me/23354XXXXXXX" class="whatsapp">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="50" alt="WhatsApp">
-    </a>
 </body>
 </html>
