@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buy Data Bundles</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>📶 Buy Affordable Data Bundles</h1>
+
+    <div class="card-grid">
+      <div class="card">
+        <img src="images/mtn.png" alt="MTN" />
+        <h2>MTN</h2>
+        <select id="mtnBundle">
+          <option value="">Choose MTN bundle</option>
+          <option value="1GB-5.90">1GB - GHS 5.90</option>
+          <option value="2GB-11.80">2GB - GHS 11.80</option>
+          <option value="3GB-17.70">3GB - GHS 17.70</option>
+          <option value="4GB-23.60">4GB - GHS 23.60</option>
+          <option value="5GB-29.00">5GB - GHS 29.00</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <img src="images/telecel.png" alt="Telecel" />
+        <h2>Telecel</h2>
+        <select id="telecelBundle">
+          <option value="">Choose Telecel bundle</option>
+          <option value="10GB-48.00">10GB - GHS 48.00</option>
+        </select>
+      </div>
+    </div>
+
+    <input type="text" id="phoneNumber" placeholder="📱 Enter your phone number" />
+    <button onclick="showPayment()">🧾 Show Payment Details</button>
+
+    <div id="paymentInfo" class="hidden">
+      <p id="payText"></p>
+      <a id="whatsappLink" href="#" target="_blank">
+        <button class="whatsapp-btn">💬 Contact Me on WhatsApp</button>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <p>Payments go to <strong>0549174866</strong> (Papa Kwabena Doku-Amponsah)</p>
+  </footer>
+
+  <script>
+    function showPayment() {
+      const mtn = document.getElementById("mtnBundle").value;
+      const telecel = document.getElementById("telecelBundle").value;
+      const phone = document.getElementById("phoneNumber").value.trim();
+
+      if (!phone) {
+        alert("Please enter your phone number.");
+        return;
+      }
+
+      let selected = mtn || telecel;
+      if (!selected) {
+        alert("Please select a bundle.");
+        return;
+      }
+
+      const [gig, amount] = selected.split("-");
+      const ref = `${phone} - ${gig}`;
+      const payText = `✅ Pay GHS ${amount} to 0549174866 (Papa Kwabena Doku-Amponsah).
+📌 Ref: ${ref}`;
+      document.getElementById("payText").innerText = payText;
+
+      const waLink = `https://wa.me/233549174866?text=${encodeURIComponent("Hello, I just paid for " + gig + ". My reference is " + ref + ".")}`;
+      document.getElementById("whatsappLink").href = waLink;
+
+      document.getElementById("paymentInfo").classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>
