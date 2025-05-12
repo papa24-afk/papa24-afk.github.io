@@ -68,8 +68,7 @@
 
       const [gig, amount] = selected.split("-");
       const ref = `${phone} - ${gig}`;
-      const payText = `✅ Pay GHS ${amount} to 0549174866 (Papa Kwabena Doku-Amponsah).
-📌 Ref: ${ref}`;
+      const payText = `✅ Pay GHS ${amount} to 0549174866 (Papa Kwabena Doku-Amponsah).\n📌 Ref: ${ref}`;
       document.getElementById("payText").innerText = payText;
 
       const waLink = `https://wa.me/233549174866?text=${encodeURIComponent("Hello, I just paid for " + gig + ". My reference is " + ref + ".")}`;
