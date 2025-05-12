@@ -1,0 +1,59 @@
+body {
+  font-family: sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 600px;
+  background: #fff;
+  padding: 20px;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ccc;
+}
+
+h1 {
+  text-align: center;
+}
+
+.card {
+  margin: 20px 0;
+}
+
+img {
+  max-width: 150px;
+  display: block;
+  margin: auto;
+}
+
+select, input, button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+button {
+  background: #25d366;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: #1ebe5d;
+}
+
+.hidden {
+  display: none;
+}
+
+#paymentInfo {
+  margin-top: 20px;
+  background: #e0ffe0;
+  padding: 10px;
+  border-radius: 5px;
+}
