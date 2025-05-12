@@ -1,0 +1,60 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ddd;
+}
+
+.product {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.product-image {
+  width: 300px;
+  max-width: 100%;
+}
+
+.product-details {
+  flex: 1;
+}
+
+.price {
+  font-size: 18px;
+  color: #444;
+}
+
+.shipping {
+  font-size: 14px;
+  color: #888;
+}
+
+select, button {
+  display: block;
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+}
+
+button {
+  background: #fc5f5f;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: #e14c4c;
+}
