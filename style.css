@@ -1,6 +1,6 @@
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: #f2f6ff;
+  background: linear-gradient(135deg, #f6f8ff, #e0ecff);
   margin: 0;
   padding: 0;
   color: #333;
@@ -13,7 +13,7 @@ body {
   padding: 30px;
   margin-top: 40px;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
@@ -30,20 +30,27 @@ h1 {
 }
 
 .card {
-  background: #f9f9f9;
+  background: #ffffff;
   padding: 20px;
   border-radius: 10px;
   flex: 1;
   min-width: 300px;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .card img {
   width: 100px;
   height: auto;
   display: block;
-  margin: 0 auto 10px;
+  margin: 0 auto 15px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
 }
 
 select, input {
@@ -91,11 +98,11 @@ button:hover {
 footer {
   text-align: center;
   font-size: 14px;
-  margin-top: 30px;
-  color: #666;
+  margin-top: 50px;
+  color: #999;
 }
 
-/* ✅ Mobile-friendly layout */
+/* Responsive layout for mobile */
 @media (max-width: 640px) {
   .card-grid {
     flex-direction: column;
