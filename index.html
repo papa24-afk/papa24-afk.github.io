@@ -1,82 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Buy Data Bundles</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataDeals - Ghana Mobile Data Bundles</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .whatsapp-btn { background: #25D366; }
+        .cart-badge { position: absolute; top: -5px; right: -5px; padding: 1px 5px; border-radius: 9999px; background-color: #ef4444; color: white; font-size: 10px; font-weight: bold; }
+    </style>
 </head>
-<body>
-  <div class="container">
-    <h1>📶 Buy Affordable Data Bundles</h1>
+<body class="bg-white font-sans">
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0 flex items-center">
+                        <i data-feather="smartphone" class="h-8 w-8 text-purple-600"></i>
+                        <span class="ml-2 text-xl font-bold text-gray-800">DataDeals</span>
+                    </a>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="index.html" class="text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium">Home</a>
+                        <a href="store.html" class="text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Store</a>
+                        <a href="Premiumdata.html" class="text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Premium Data</a>
+                        <a href="#" class="text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Become Agent</a>
+                        <a href="orders.html" class="text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">My Orders</a>
+                        <a href="https://chat.whatsapp.com/E6fHObkVGoT7wEEoD7CPwY?mode=wwc" target="_blank" class="text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Community</a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <a href="cart.html" class="relative mr-4 flex items-center text-gray-700 hover:text-gray-900">
+                        <i data-feather="shopping-cart" class="h-5 w-5"></i>
+                        <span class="cart-badge hidden">0</span>
+                        <span id="cart-total-header" class="ml-2 text-sm font-medium">₵0.00</span>
+                    </a>
+                    <div id="auth-links-container" class="flex items-center">
+                        <a href="login.html" class="flex items-center text-gray-700 hover:text-gray-900">
+                            <i data-feather="user" class="h-5 w-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <div class="card-grid">
-      <div class="card">
-        <img src="images/mtn.png" alt="MTN" />
-        <h2>MTN</h2>
-        <select id="mtnBundle">
-          <option value="">Choose MTN bundle</option>
-          <option value="1GB-5.90">1GB - GHS 5.90</option>
-          <option value="2GB-11.80">2GB - GHS 11.80</option>
-          <option value="3GB-17.70">3GB - GHS 17.70</option>
-          <option value="4GB-23.60">4GB - GHS 23.60</option>
-          <option value="5GB-29.00">5GB - GHS 29.00</option>
-        </select>
-      </div>
-
-      <div class="card">
-        <img src="images/telecel.png" alt="Telecel" />
-        <h2>Telecel</h2>
-        <select id="telecelBundle">
-          <option value="">Choose Telecel bundle</option>
-          <option value="10GB-48.00">10GB - GHS 48.00</option>
-        </select>
-      </div>
+    <div class="relative bg-gray-900">
+        <img class="w-full h-96 object-cover opacity-50" src="http://static.photos/technology/1200x630/1" alt="Mobile data bundles">
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center px-4">
+                <h1 class="text-4xl font-bold text-white sm:text-5xl md:text-6xl">Your One-Stop Shop for Data Bundles</h1>
+                <p class="mt-4 text-lg text-gray-300">Instant delivery for MTN, Telecel, and AirtelTigo.</p>
+                <a href="store.html" class="mt-8 inline-block bg-purple-600 text-white font-bold py-3 px-8 rounded-md hover:bg-purple-700">Shop Now</a>
+            </div>
+        </div>
     </div>
 
-    <input type="text" id="phoneNumber" placeholder="📱 Enter your phone number" />
-    <button onclick="showPayment()">🧾 Show Payment Details</button>
-
-    <div id="paymentInfo" class="hidden">
-      <p id="payText"></p>
-      <a id="whatsappLink" href="#" target="_blank">
-        <button class="whatsapp-btn">💬 Contact Me on WhatsApp</button>
-      </a>
+    <div class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="p-4">
+                    <i data-feather="zap" class="h-12 w-12 text-purple-600 mx-auto"></i>
+                    <h3 class="mt-4 text-lg font-medium">Instant Delivery</h3>
+                    <p class="mt-2 text-gray-500">Your data bundles are sent to you in seconds after payment.</p>
+                </div>
+                <div class="p-4">
+                    <i data-feather="shield" class="h-12 w-12 text-purple-600 mx-auto"></i>
+                    <h3 class="mt-4 text-lg font-medium">Secure Payments</h3>
+                    <p class="mt-2 text-gray-500">All transactions are encrypted and processed securely.</p>
+                </div>
+                <div class="p-4">
+                    <i data-feather="headphones" class="h-12 w-12 text-purple-600 mx-auto"></i>
+                    <h3 class="mt-4 text-lg font-medium">24/7 Support</h3>
+                    <p class="mt-2 text-gray-500">Our support team is always available to help you out.</p>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <footer>
-    <p>Payments go to <strong>0549174866</strong> (Papa Kwabena Doku-Amponsah)</p>
-  </footer>
-
-  <script>
-    function showPayment() {
-      const mtn = document.getElementById("mtnBundle").value;
-      const telecel = document.getElementById("telecelBundle").value;
-      const phone = document.getElementById("phoneNumber").value.trim();
-
-      if (!phone) {
-        alert("Please enter your phone number.");
-        return;
-      }
-
-      let selected = mtn || telecel;
-      if (!selected) {
-        alert("Please select a bundle.");
-        return;
-      }
-
-      const [gig, amount] = selected.split("-");
-      const ref = `${phone} - ${gig}`;
-      const payText = `✅ Pay GHS ${amount} to 0549174866 (Papa Kwabena Doku-Amponsah).
-📌 Ref: ${ref}`;
-      document.getElementById("payText").innerText = payText;
-
-      const waLink = `https://wa.me/233549174866?text=${encodeURIComponent("Hello, I just paid for " + gig + ". My reference is " + ref + ".")}`;
-      document.getElementById("whatsappLink").href = waLink;
-
-      document.getElementById("paymentInfo").classList.remove("hidden");
-    }
-  </script>
+    <a href="https://wa.me/233549174866" target="_blank" class="fixed bottom-6 right-6 whatsapp-btn text-white py-3 px-4 rounded-full shadow-lg flex items-center">
+        <i data-feather="message-circle" class="h-5 w-5 mr-2"></i>
+        <span>Contact us</span>
+    </a>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="main.js"></script>
 </body>
 </html>
