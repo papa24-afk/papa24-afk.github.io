@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Register - DataDeals</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .whatsapp-btn { background: #25D366; }
+        .cart-badge { position: absolute; top: -5px; right: -5px; padding: 1px 5px; border-radius: 9999px; background-color: #ef4444; color: white; font-size: 10px; font-weight: bold; }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0 flex items-center">
+                        <i data-feather="smartphone" class="h-8 w-8 text-purple-600"></i>
+                        <span class="ml-2 text-xl font-bold text-gray-800">DataDeals</span>
+                    </a>
+                    {/* Simplified nav for login page */}
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <a href="cart.html" class="relative mr-4 flex items-center text-gray-700 hover:text-gray-900">
+                        <i data-feather="shopping-cart" class="h-5 w-5"></i>
+                        <span class="cart-badge hidden">0</span>
+                        <span id="cart-total-header" class="ml-2 text-sm font-medium">₵0.00</span>
+                    </a>
+                    {/* Auth links not needed here */}
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="main.js"></script>
+</body>
+</html>

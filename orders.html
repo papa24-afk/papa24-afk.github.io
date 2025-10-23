@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders - DataDeals</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .whatsapp-btn { background: #25D366; }
+        .cart-badge { position: absolute; top: -5px; right: -5px; padding: 1px 5px; border-radius: 9999px; background-color: #ef4444; color: white; font-size: 10px; font-weight: bold; }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0 flex items-center">
+                        <i data-feather="smartphone" class="h-8 w-8 text-purple-600"></i>
+                        <span class="ml-2 text-xl font-bold text-gray-800">DataDeals</span>
+                    </a>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="index.html" class="text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Home</a>
+                        <a href="store.html" class="text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Store</a>
+                        <a href="Premiumdata.html" class="text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Premium Data</a> {/* Link Updated */}
+                        <a href="#" class="text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Become Agent</a>
+                        <a href="orders.html" class="text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium">My Orders</a>
+                        <a href="https://chat.whatsapp.com/E6fHObkVGoT7wEEoD7CPwY?mode=wwc" target="_blank" class="text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Community</a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <a href="cart.html" class="relative mr-4 flex items-center text-gray-700 hover:text-gray-900">
+                        <i data-feather="shopping-cart" class="h-5 w-5"></i>
+                        <span class="cart-badge hidden">0</span>
+                        <span id="cart-total-header" class="ml-2 text-sm font-medium">₵0.00</span>
+                    </a>
+                    <div id="auth-links-container" class="flex items-center">
+                        <a href="login.html" class="flex items-center text-gray-700 hover:text-gray-900">
+                            <i data-feather="user" class="h-5 w-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="main.js"></script>
+</body>
+</html>

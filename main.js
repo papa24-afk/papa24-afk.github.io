@@ -579,13 +579,13 @@ document.addEventListener('DOMContentLoaded', async function() {
         return `<div><div class="accordion-header p-4 text-white cursor-pointer flex justify-between items-center rounded-lg"><h2 class="text-xl font-bold">${product.name} (Premium)</h2><i data-feather="chevron-down" class="h-5 w-5"></i></div><div class="accordion-content bg-white p-6 rounded-b-lg shadow-sm mb-6 hidden"><div class="flex items-center"><img class="h-16 w-16 object-contain rounded-md" src="${product.image_url}" alt="${product.name}"><div class="ml-4"><p class="text-lg font-semibold">${product.name} Data</p><p class="text-gray-600 mt-1">${priceRange}</p></div></div><div class="mt-4"><a href="product.html?product=${product.name.toLowerCase()}" class="w-full bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-md text-sm font-medium transition inline-block text-center">Select options</a></div></div></div>`;
     }
     function setupPremiumAccordion() {
-        
+        // This can be the same as setupAccordion for now
         document.querySelectorAll('#premium-accordion-container .accordion-header').forEach(header => {
             header.addEventListener('click', () => { /* ... same accordion logic ... */ });
         });
     }
 
-    
+    // --- AGENT PAGE FUNCTION ---
     function setupAgentPage() {
         const addToCartBtn = document.getElementById('add-agent-to-cart');
         if (!addToCartBtn) return;
@@ -600,4 +600,4 @@ document.addEventListener('DOMContentLoaded', async function() {
             window.location.href = 'cart.html';
         });
     }
-}); 
+}); // End of DOMContentLoaded
